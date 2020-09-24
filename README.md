@@ -13,17 +13,19 @@ Llegar a cliente final
 - Cierre no efectivos
 - Ecuador, EU y Bolivia
 
-# Proyectos similares
-https://www.hotjar.com/
-https://mouseflow.com/
-
-# React mouse tracking and recording
-https://www.freecodecamp.org/news/how-to-track-user-interactions-in-your-react-app-b82f0bc4c7ff/
-https://github.com/nytimes/react-tracking
-
 # Formulario n preguntas
 - Interactivos
 - Preguntas dicotomicas (si/no)
 - Preguntas de testeo
 
 # Seguridad de la informaciòn
+
+
+# Arquitectura
+[Arquitectura (Serverless/RESTful API](00_ARQUITECTURA/README.md)
+
+# Templates
+[Uso de plantillas](01_TEMPLATES/README.md)
+
+# Tracking
+[Caputura de moviv](02_TRACKING/README.md)
