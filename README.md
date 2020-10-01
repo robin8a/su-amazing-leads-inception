@@ -46,15 +46,19 @@ Cliente
       Esta construcción de los Landings y Formulario no la imaginamos muy Drag and Drop .
 3. El Cliente puede ver la información de los registros del formulario y podra exportarla en csv
 Asociado a la información que envía el formulario.
-  Datos Explícitos diligenciados por el usuario.
-  Comportamientos
-   Si el Usuario esta en Desktop o Mobile
-   Tiempo Total de respuesta del formulario
-   Tiempo Disgregado por Pregunta
-   Cantidad de Clic o Touch en Pantalla
-   Tiempo "Over" sobre los botones
-   Detectar si esta escribiendo en Mayúscula o Minúscula
-   IP
-4. Debemos contemplar de forma abstracta un disparador que nos permita enviar la infromación a terceros al momento de recibir un formulario (Sea tanto a plataformas de Machine Learning como a terceros como Call Center CRM etc)
+  - Datos Explícitos diligenciados por el usuario.
+  ## Comportamientos
+   - Si el Usuario esta en Desktop o Mobile
+   - Tiempo Total de respuesta del formulario
+   - Tiempo Disgregado por Pregunta
+   - Cantidad de Clic o Touch en Pantalla
+   - Tiempo "Over" sobre los botones
+   - Detectar si esta escribiendo en Mayúscula o Minúscula
+   - IP
+1. Debemos contemplar de forma abstracta un disparador que nos permita enviar la infromación a terceros al momento de recibir un formulario (Sea tanto a plataformas de Machine Learning como a terceros como Call Center CRM etc)
    Entiendo que esto puede variar acorde a la integración pero pensemos como abstractamente podemos construir estos disparadores.
 Lo Ideal es tener un Presupuesto Inicial para ir buscando la Viabilidad.
+
+# Costos Estimados
+- ![SUMMUS_PROJECTs_00_SCRUM_HUs_TASKs_COST...](/_images/HUs_estimado_costos.png)
+- ![FIBONACCI-TO-STORY-POINTS](_images/FIBONACCI-TO-STORY-POINTS.png)
