@@ -5,30 +5,7 @@
 source ~/.bash_profile
 npx create-react-app su-amazing-leads
 ```
-# Amplify
-```sh
-amplify configure
-
-```
-## Init
-
-```sh
-amplify init
-? Enter a name for the project su-amazing-leads
-? Enter a name for the environment suamaleapi
-? Choose your default editor: Visual Studio Code
-? Choose the type of app that you're building javascript
-Please tell us about your project
-? What javascript framework are you using react
-? Source Directory Path:  src
-? Distribution Directory Path: build
-? Build Command:  npm run-script build
-? Start Command: npm run-script start
-Using default provider  awscloudformation
-```
-
 ## Install Amplify libraries
-
 
 # Bootstrap
 https://create-react-app.dev/docs/adding-bootstrap/
@@ -70,8 +47,6 @@ git remote add origin ssh://su_amazing_leads_inception_rsa/v1/repos/su-amazing-l
 
 git push --set-upstream origin master
 
-
-
 ```
 
 # Amplify
@@ -79,10 +54,16 @@ git push --set-upstream origin master
 - [Getting started Auth with style](https://github.com/aws-amplify/amplify-js/tree/e56aba642acc7eb3482f0e69454a530409d1b3ac)
 
 ```sh
+amplify configure
+
+```
+
+## Init
+
+```sh
 amplify init
-Note: It is recommended to run this command from the root of your app directory
-? Enter a name for the project kio-sl-lms
-? Enter a name for the environment kiosllms
+? Enter a name for the project su-amazing-leads
+? Enter a name for the environment suamaleapi
 ? Choose your default editor: Visual Studio Code
 ? Choose the type of app that you're building javascript
 Please tell us about your project
@@ -91,8 +72,7 @@ Please tell us about your project
 ? Distribution Directory Path: build
 ? Build Command:  npm run-script build
 ? Start Command: npm run-script start
-amplify publish
-
+Using default provider  awscloudformation
 ```
 
 ```sh
@@ -104,21 +84,25 @@ kio-sl-lms robin8a$ amplify add hosting
 ? hosting bucket name kio-sl-lms-20200907192030-hostingbucket
 ? index doc for the website index.html
 ? error doc for the website index.html
+
+
+https://master.ds3q4dungfi7s.amplifyapp.com
+
 ```
 
 ```sh
 amplify publish
-http://kio-sl-lms-20200907192030-hostingbucket-kiosllmsev.s3-website-us-east-1.amazonaws.com
-
 
 ```
 
-# React Drag & Drop
-https://www.youtube.com/watch?v=-MfTv5VRM0A
-https://github.com/atlassian/react-beautiful-dnd
-https://github.com/react-dnd/react-dnd
-https://www.smashingmagazine.com/2020/02/html-drag-drop-api-react/
 
+# Navegation
 
+```sh
+yarn add react-router-dom
 
- 
+```
+
+# Cloud 9 config
+
+https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.md
