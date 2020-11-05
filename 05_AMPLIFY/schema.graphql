@@ -1,0 +1,59 @@
+type QuestionaryConfig @model {
+  id: ID!
+  isShowReactCursorPositionLabel: Boolean
+  layout: String!
+} 
+
+type Questionary @model @aws_api_key{
+  id: ID!
+  clientID: String!
+  utm: String!
+  ip: String
+  browser: String
+  questionaryStartTime: Int!
+  questionaryEndTime: Int!
+  isBrowser: Boolean
+  isMobile: Boolean
+  state_0:	Int
+  state_1: Int	
+  state_2: Int
+  questions: [Question] @connection(keyName: "byQuestionary", fields: ["id"])
+}
+
+type Question @model @key(name: "byQuestionary", fields: ["questionaryID"]) {
+  id: ID!
+  question: String!
+  question_start_time: Int!
+  question_end_time: Int!
+  questionaryID: ID!
+  questionary: Questionary @connection(fields: ["questionaryID"])
+  options: [Option] @connection(keyName: "byQuestion", fields: ["id"])
+  interactions: [Interaction] @connection(keyName: "byQuestion", fields: ["id"])
+}
+
+type Option @model @key(name: "byQuestion", fields: ["questionID"]) {
+  id: ID!
+  title: String!
+  isSelected: Boolean!
+  questionID: ID!
+  question: Question @connection(fields: ["questionID"])
+}
+
+type Interaction @model @key(name: "byQuestion", fields: ["questionID"]) {
+  id: ID!
+  type: String!
+  element: String!
+  epoch: Int!
+  isMouseDetected: Boolean
+  isTouchDetected: Boolean
+  height: Float
+  width: Float
+  isActive: Boolean
+  isActiveClick: Boolean
+  isActiveTouch: Boolean
+  isPositionOutside: Boolean
+  x: Int
+  y: Int
+  questionID: ID!
+  question: Question @connection(fields: ["questionID"])
+}
