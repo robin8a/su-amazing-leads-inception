@@ -15,7 +15,7 @@ Every time that the mouse is over an area is calculated:
 - speedAverage: average per groupInteractionId
 - sumTimeMiliseconds: sum time per groupInteractionId
 - sumDistance: sum distance per groupInteractionId
-- countOutside: count by in/out area
+- countOutside: count by in/out any area (blue, orange or green)
 
 ## Mobile
 Every time that the mouse has a tap action is calculated:
