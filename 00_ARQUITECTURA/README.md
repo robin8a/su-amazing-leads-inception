@@ -35,3 +35,15 @@
 # Despliegue
 - Por cada proyecto generar su propia estructura (ui/appsync/db)
 - Una sola aplicación donde distiguimos a traves de "proyectos el contenido a desplegar", aquí lo dificil es mantener separado los URLs y marcas. Quiero decir, por ejemplo encuesta.bancosantander.com de encuesta.otra_empresa.com ya que se tiene la misma raíz.
+
+# Testing Web-App
+
+- [Amplify master branch](https://master.ds3q4dungfi7s.amplifyapp.com/)
+
+# API Appsync
+
+## Postman
+- Use postman
+- 
+
+## AWS - cli scan command

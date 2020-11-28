@@ -1,3 +1,5 @@
+# Architecture
+- ![Diagram](_images/architecture.png)
 # Event areas interaction
 - ![Areas Interaction KPIs](_images/questionary_areas.png)
 - Blue: questionary area
@@ -32,3 +34,5 @@ Every time that the mouse has a tap action is calculated:
 # Data Sample
 
 - [drive: data_sample](https://docs.google.com/spreadsheets/d/1rhHTx-CdESuPudghoKZjgaKIQGzXxAZI43wDBm7OB7Q/edit?usp=sharing)
+
+# AppSync - GraphQL - API
