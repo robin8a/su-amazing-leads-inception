@@ -32,3 +32,8 @@ https://jsonip.com/
 https://reactjsexample.com/react-component-that-tracks-whether-or-not-caps-lock-is-active/
 
 https://www.pluralsight.com/guides/prop-changes-in-react-component
+
+
+# Mouse Speed
+https://stackoverflow.com/questions/6902299/python-calculate-mouse-speed
+https://stackoverflow.com/questions/42146272/how-to-use-javascript-reduce-function-to-calculate-average-of-items-meeting-a-sp
