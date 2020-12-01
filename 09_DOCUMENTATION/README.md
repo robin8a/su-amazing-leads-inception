@@ -25,6 +25,10 @@ Every time that the mouse is over an area is calculated:
 - sumTimeMiliseconds: sum time per groupInteractionId
 - sumDistance: sum distance per groupInteractionId
 - countOutside: count by in/out any area (blue, orange or green)
+- distance_questionary_point
+- distance_left_button_point 
+- distance_right_button_point
+- sumTimeMilisecondsBeforeNextQuestion: sum miliseconds before click next question
 
 ## Mobile
 Every time that the mouse has a tap action is calculated:
@@ -43,3 +47,6 @@ Every time that the mouse has a tap action is calculated:
 - [drive: data_sample](https://docs.google.com/spreadsheets/d/1rhHTx-CdESuPudghoKZjgaKIQGzXxAZI43wDBm7OB7Q/edit?usp=sharing)
 
 # AppSync - GraphQL - API
+
+
+# Testing
