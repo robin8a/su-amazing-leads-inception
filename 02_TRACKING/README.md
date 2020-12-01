@@ -37,3 +37,10 @@ https://www.pluralsight.com/guides/prop-changes-in-react-component
 # Mouse Speed
 https://stackoverflow.com/questions/6902299/python-calculate-mouse-speed
 https://stackoverflow.com/questions/42146272/how-to-use-javascript-reduce-function-to-calculate-average-of-items-meeting-a-sp
+
+
+# Move the mouse
+https://stackoverflow.com/questions/4752501/move-the-mouse-pointer-to-a-specific-position#:~:text=You%20can't%20move%20the,control%20under%20the%20mouse%20pointer.
+https://css-tricks.com/simulating-mouse-movement/
+https://www.newline.co/fullstack-react/30-days-of-react/day-10/
+https://www.xspdf.com/resolution/52532507.html

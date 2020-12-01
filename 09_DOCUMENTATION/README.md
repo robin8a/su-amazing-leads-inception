@@ -6,6 +6,13 @@
 - Orange: left button
 - Green: right button
 
+# Relative Distances
+![References Points](_images/reference_points.png)
+Three distances are calculated:
+1. Green: from pointer to center top Questionary
+2. Blue: from pointer to right button
+3. Pink: from pointer to left button
+
 # KPI
 ## PC
 Every time that the mouse is over an area is calculated:
