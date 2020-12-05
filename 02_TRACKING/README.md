@@ -40,7 +40,10 @@ https://stackoverflow.com/questions/42146272/how-to-use-javascript-reduce-functi
 
 
 # Move the mouse
-https://stackoverflow.com/questions/4752501/move-the-mouse-pointer-to-a-specific-position#:~:text=You%20can't%20move%20the,control%20under%20the%20mouse%20pointer.
-https://css-tricks.com/simulating-mouse-movement/
-https://www.newline.co/fullstack-react/30-days-of-react/day-10/
-https://www.xspdf.com/resolution/52532507.html
+It's not possible
+- https://stackoverflow.com/questions/4752501/move-the-mouse-pointer-to-a-specific-position#:~:text=You%20can't%20move%20the,control%20under%20the%20mouse%20pointer.
+- https://css-tricks.com/simulating-mouse-movement/
+- https://www.newline.co/fullstack-react/30-days-of-react/day-10/
+- https://www.xspdf.com/resolution/52532507.html
+- https://stackoverflow.com/questions/2322603/move-mouse-pointer-in-javascript
+- https://stackoverflow.com/questions/4752501/move-the-mouse-pointer-to-a-specific-position
