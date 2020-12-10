@@ -44,10 +44,10 @@ Every time that the mouse has a tap action is calculated:
 
 # AppSync - GraphQL - API
 
-
 ## Using Postman
 ![Postman example](_images/postman_query_interactions.png)
 - Link: https://rop52fode5aqfnb4cfyd2okbza.appsync-api.us-east-1.amazonaws.com/graphql
+- api key: shared in email
 
 ### Query for ListInteractions
 ```json
@@ -56,10 +56,40 @@ Every time that the mouse has a tap action is calculated:
 
 ## Using AWS AppSync Console
 
+- [AWS Console link: ](https://shiftactive.signin.aws.amazon.com/console)
+- User: su-amazing-leads
+- Password: shared in email
+- [Queries examples](./../10_APPSYNC/README.md)
 
 ## Using CLI
+- [Install and Configure CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
+- [How to configure new profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
 
+### Add new profile
+```sh
+sudo aws configure --profile new_profile
+```
+### Using profiles
+ - [cli Multiple Profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html)
+```sh
+# Single commands
+aws ec2 describe-instances --profile new_profile
+# or for multiples commands
+$ export AWS_PROFILE=new_profile
+```
 
+### Scan dynamodb Table
+- Tab-separated values (.tsv)
+```sh
+aws dynamodb scan \
+    --table-name Interaction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, __typename.S, countOutside.N, createdAt.S, distance.N, distance_left_button_point.N, distance_questionary_point.N, distance_right_button_point.N, dt.N, element.S, epoch.N, height.N, isMouseDetected.BOOL, isPositionOutside.BOOL, isTouchDetected.BOOL, questionID.S, questionaryInteractionID.S, speed.N, speedAverage.N, sumDistance.N, sumTimeMiliseconds.N, sumTimeMilisecondsBeforeNextQuestion.N, type.S, updatedAt.S, width.N, x.N, y.N]" \
+    --filter-expression 'type = :val' \
+    --expression-attribute-values '{":val": {"S": "position"}}' \
+    --output text > InteractionsDataDump.tsv
 
-
-# Testing
+```
+## Using Dynobase
+- It use the aws configuration
+- [Dynobase](https://dynobase.dev/)
+- ![Example](_images/dynobase_example.png)
