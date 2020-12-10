@@ -80,15 +80,28 @@ $ export AWS_PROFILE=new_profile
 
 ### Scan dynamodb Table
 - Tab-separated values (.tsv)
+
+#### All
 ```sh
 aws dynamodb scan \
     --table-name Interaction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
     --query "Items[*].[id.S, __typename.S, countOutside.N, createdAt.S, distance.N, distance_left_button_point.N, distance_questionary_point.N, distance_right_button_point.N, dt.N, element.S, epoch.N, height.N, isMouseDetected.BOOL, isPositionOutside.BOOL, isTouchDetected.BOOL, questionID.S, questionaryInteractionID.S, speed.N, speedAverage.N, sumDistance.N, sumTimeMiliseconds.N, sumTimeMilisecondsBeforeNextQuestion.N, type.S, updatedAt.S, width.N, x.N, y.N]" \
-    --filter-expression 'type = :val' \
+    --output text > InteractionsDataDump.tsv
+```
+
+#### Filter
+```sh
+aws dynamodb scan \
+    --table-name Interaction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, __typename.S, countOutside.N, createdAt.S, distance.N, distance_left_button_point.N, distance_questionary_point.N, distance_right_button_point.N, dt.N, element.S, epoch.N, height.N, isMouseDetected.BOOL, isPositionOutside.BOOL, isTouchDetected.BOOL, questionID.S, questionaryInteractionID.S, speed.N, speedAverage.N, sumDistance.N, sumTimeMiliseconds.N, sumTimeMilisecondsBeforeNextQuestion.N, type.S, updatedAt.S, width.N, x.N, y.N]" \
+    --filter-expression 'questionaryInteractionID = :val' \
     --expression-attribute-values '{":val": {"S": "position"}}' \
     --output text > InteractionsDataDump.tsv
-
 ```
+- Header
+  id.S	__typename.S	countOutside.N	createdAt.S	distance.N	distance_left_button_point.N	distance_questionary_point.N	distance_right_button_point.N	dt.N	element.S	epoch.N	height.N	isMouseDetected.BOOL	isPositionOutside.BOOL	isTouchDetected.BOOL	questionID.S	questionaryInteractionID.S	speed.N	speedAverage.N	sumDistance.N	sumTimeMiliseconds.N	sumTimeMilisecondsBeforeNextQuestion.N	type.S	updatedAt.S	width.N	x.N	y.N
+- [InteractionsDataDump.tsv](../10_APPSYNC/InteractionsDataDump.tsv) 
+
 ## Using Dynobase
 - It use the aws configuration
 - [Dynobase](https://dynobase.dev/)

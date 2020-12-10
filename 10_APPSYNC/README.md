@@ -70,3 +70,13 @@ query MyQuery {
   }
 }
 ```
+
+
+# AWS
+
+```sh
+
+nano ~/.aws/credentials
+export AWS_PROFILE=su-amazing-leads-profile
+
+```
