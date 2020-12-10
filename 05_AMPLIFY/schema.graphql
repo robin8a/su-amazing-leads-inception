@@ -1,30 +1,41 @@
 type QuestionaryConfig @model {
   id: ID!
   isShowReactCursorPositionLabel: Boolean
+  isCreateInteractionQuestionary: Boolean
+  isCreateInteractionQuestionaryButton: Boolean
   layout: String!
 } 
 
-type Questionary @model @aws_api_key{
+type Questionary @model {
+  id: ID!
+  clientID: String!
+  name: String!
+  questions: [Question] @connection(keyName: "byQuestionary", fields: ["id"])
+  questionary_interaction: [QuestionaryInteraction] @connection(keyName: "byQuestionary", fields: ["id"])
+}
+
+type QuestionaryInteraction @model @key(name: "byQuestionary", fields: ["questionaryID"]){
   id: ID!
   clientID: String!
   utm: String!
   ip: String
   browser: String
-  questionaryStartTime: Int!
-  questionaryEndTime: Int!
+  questionaryStartTime: AWSTimestamp!
+  questionaryEndTime: AWSTimestamp!
   isBrowser: Boolean
   isMobile: Boolean
   state_0:	Int
   state_1: Int	
   state_2: Int
-  questions: [Question] @connection(keyName: "byQuestionary", fields: ["id"])
+  questionaryID: ID!
+  questionary: Questionary @connection(fields: ["questionaryID"])
 }
 
 type Question @model @key(name: "byQuestionary", fields: ["questionaryID"]) {
   id: ID!
   question: String!
-  question_start_time: Int!
-  question_end_time: Int!
+  question_start_time: AWSTimestamp!
+  question_end_time: AWSTimestamp!
   questionaryID: ID!
   questionary: Questionary @connection(fields: ["questionaryID"])
   options: [Option] @connection(keyName: "byQuestion", fields: ["id"])
@@ -41,9 +52,10 @@ type Option @model @key(name: "byQuestion", fields: ["questionID"]) {
 
 type Interaction @model @key(name: "byQuestion", fields: ["questionID"]) {
   id: ID!
+  groupInteractionId: String
   type: String!
   element: String!
-  epoch: Int!
+  epoch: AWSTimestamp!
   isMouseDetected: Boolean
   isTouchDetected: Boolean
   height: Float
@@ -54,6 +66,17 @@ type Interaction @model @key(name: "byQuestion", fields: ["questionID"]) {
   isPositionOutside: Boolean
   x: Int
   y: Int
+  distance: Float
+  speed: Float
+  speedAverage: Float
+  sumTimeMiliseconds: Float
+  dt: Float
+  sumDistance: Float
+  countOutside: Int,
+  distance_questionary_point: Float
+  distance_left_button_point: Float
+  distance_right_button_point: Float
+  sumTimeMilisecondsBeforeNextQuestion: Float
   questionID: ID!
   question: Question @connection(fields: ["questionID"])
 }

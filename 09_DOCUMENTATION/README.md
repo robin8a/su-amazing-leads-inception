@@ -42,11 +42,24 @@ Every time that the mouse has a tap action is calculated:
 - sumDistance: sum distance per groupInteractionId
 
 
-# Data Sample
-
-- [drive: data_sample](https://docs.google.com/spreadsheets/d/1rhHTx-CdESuPudghoKZjgaKIQGzXxAZI43wDBm7OB7Q/edit?usp=sharing)
-
 # AppSync - GraphQL - API
+
+
+## Using Postman
+![Postman example](_images/postman_query_interactions.png)
+- Link: https://rop52fode5aqfnb4cfyd2okbza.appsync-api.us-east-1.amazonaws.com/graphql
+
+### Query for ListInteractions
+```json
+{"query":"query ListInteractions($filter: ModelInteractionFilterInput, $limit: Int, $nextToken: String) {\n  listInteractions(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    items {\n      id\n      groupInteractionId\n      type\n      element\n      epoch\n      isMouseDetected\n      isTouchDetected\n      height\n      width\n      isActive\n      isActiveClick\n      isActiveTouch\n      isPositionOutside\n      x\n      y\n      distance\n      speed\n      speedAverage\n      sumTimeMiliseconds\n      dt\n      sumDistance\n      countOutside\n      distance_questionary_point\n      distance_left_button_point\n      distance_right_button_point\n      sumTimeMilisecondsBeforeNextQuestion\n      questionID\n      question {\n        id\n        question\n        question_start_time\n        question_end_time\n        questionaryID\n      }\n    }\n    nextToken\n  }\n}\n","variables":{"authMode":"API_KEY"}}
+```
+
+## Using AWS AppSync Console
+
+
+## Using CLI
+
+
 
 
 # Testing
