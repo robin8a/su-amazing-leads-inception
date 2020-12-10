@@ -62,3 +62,14 @@ Lo Ideal es tener un Presupuesto Inicial para ir buscando la Viabilidad.
 # Costos Estimados
 - ![SUMMUS_PROJECTs_00_SCRUM_HUs_TASKs_COST...](/_images/HUs_estimado_costos.png)
 - ![FIBONACCI-TO-STORY-POINTS](_images/FIBONACCI-TO-STORY-POINTS.png)
+
+```json
+{
+  "id": "1",
+  "isCreateInteraction": false,
+  "isCreateInteractionQuestionary": false,
+  "isCreateInteractionQuestionaryButton": false,
+  "isShowReactCursorPositionLabel": false,
+  "layout": "none"
+}
+```
