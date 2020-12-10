@@ -1,7 +1,7 @@
 # Architecture
 - ![Diagram](_images/architecture.png)
 # Event areas interaction
-- ![Areas Interaction KPIs](_images/questionary_areas.png)
+![Areas Interaction KPIs](_images/questionary_areas.png)
 - Blue: questionary area
 - Orange: left button
 - Green: right button
@@ -58,7 +58,8 @@ Every time that the mouse has a tap action is calculated:
 
 - [AWS Console link: ](https://shiftactive.signin.aws.amazon.com/console)
 - User: su-amazing-leads
-- Password: shared in email
+- Password: shared by email
+- Services => AWS AppSync => APIs => suamleapi-suamaleapi => Queries
 - [Queries examples](./../10_APPSYNC/README.md)
 
 ## Using CLI
@@ -69,13 +70,18 @@ Every time that the mouse has a tap action is calculated:
 ```sh
 sudo aws configure --profile new_profile
 ```
+
+
 ### Using profiles
  - [cli Multiple Profiles](https://docs.aws.amazon.com/cli/latest/userguide/cli-multiple-profiles.html)
 ```sh
 # Single commands
 aws ec2 describe-instances --profile new_profile
 # or for multiples commands
-$ export AWS_PROFILE=new_profile
+export AWS_PROFILE=new_profile
+# Example
+nano ~/.aws/credentials
+export AWS_PROFILE=su-amazing-leads-profile
 ```
 
 ### Scan dynamodb Table
@@ -98,9 +104,11 @@ aws dynamodb scan \
     --expression-attribute-values '{":val": {"S": "position"}}' \
     --output text > InteractionsDataDump.tsv
 ```
-- Header
+- Header for .tsv files
+```tsv
   id.S	__typename.S	countOutside.N	createdAt.S	distance.N	distance_left_button_point.N	distance_questionary_point.N	distance_right_button_point.N	dt.N	element.S	epoch.N	height.N	isMouseDetected.BOOL	isPositionOutside.BOOL	isTouchDetected.BOOL	questionID.S	questionaryInteractionID.S	speed.N	speedAverage.N	sumDistance.N	sumTimeMiliseconds.N	sumTimeMilisecondsBeforeNextQuestion.N	type.S	updatedAt.S	width.N	x.N	y.N
-- [InteractionsDataDump.tsv](../10_APPSYNC/InteractionsDataDump.tsv) 
+```
+- [InteractionsDataDump.tsv](../10_APPSYNC/InteractionsDataDump.tsv)  copy - paste (.xlsx or googlesheets)
 
 ## Using Dynobase
 - It use the aws configuration
