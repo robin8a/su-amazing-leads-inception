@@ -106,3 +106,48 @@ yarn add react-router-dom
 # Cloud 9 config
 
 https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.md
+
+
+# To Do
+- Agregar relacion QuestionaryInteraction
+- utm Table enrichment
+- al finalizar el nuevo schema
+  ```js
+  export const listQuestionarys = /* GraphQL */ `
+  query ListQuestionarys(
+    $filter: ModelQuestionaryFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listQuestionarys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        isEnable
+        questions {
+          items {
+          id
+          question
+          options {
+            items {
+              id
+              title
+            }
+          }
+        }
+        }
+        questionaryInteractions {
+          nextToken
+        }
+      }
+      nextToken
+    }
+  }
+`;
+  ```
+- Auth => Admin
+- Guardar respuesta
+- UI QuestionaryConfig
+- UI Questionary
+- UI Option
+- utm query
