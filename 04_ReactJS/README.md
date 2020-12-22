@@ -109,9 +109,10 @@ https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.m
 
 
 # To Do
-- Agregar relacion QuestionaryInteraction
-- utm Table enrichment
-- al finalizar el nuevo schema
+- Agregar relacion QuestionaryInteraction to Answer (OK)
+- utm Table enrichment ()
+- al finalizar el nuevo schema actualizar questionary
+  
   ```js
   export const listQuestionarys = /* GraphQL */ `
   query ListQuestionarys(
@@ -151,3 +152,9 @@ https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.m
 - UI Questionary
 - UI Option
 - utm query
+- Actualizar lead con archivo .csv
+
+
+
+# Historios de usuario
+http://www.projectadmin.org/guia-aplicada-de-historias-de-usuarios-en-scrum-agil-practicas-recomendadas-de-historia-de-usuario-yodiz-project-management-blog/
