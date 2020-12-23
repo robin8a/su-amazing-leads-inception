@@ -27,6 +27,8 @@ query MyQuery {
         items {
           id
           question
+          orderNumber
+          isEnable
         }
       }
     }

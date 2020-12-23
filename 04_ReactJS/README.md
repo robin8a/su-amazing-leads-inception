@@ -112,40 +112,6 @@ https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.m
 - Agregar relacion QuestionaryInteraction to Answer (OK)
 - utm Table enrichment ()
 - al finalizar el nuevo schema actualizar questionary
-  
-  ```js
-  export const listQuestionarys = /* GraphQL */ `
-  query ListQuestionarys(
-    $filter: ModelQuestionaryFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listQuestionarys(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        isEnable
-        questions {
-          items {
-          id
-          question
-          options {
-            items {
-              id
-              title
-            }
-          }
-        }
-        }
-        questionaryInteractions {
-          nextToken
-        }
-      }
-      nextToken
-    }
-  }
-`;
-  ```
 - Auth => Admin
 - Guardar respuesta
 - UI QuestionaryConfig
@@ -157,4 +123,8 @@ https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.m
 
 
 # Historios de usuario
-http://www.projectadmin.org/guia-aplicada-de-historias-de-usuarios-en-scrum-agil-practicas-recomendadas-de-historia-de-usuario-yodiz-project-management-blog/
+- http://www.projectadmin.org/guia-aplicada-de-historias-de-usuarios-en-scrum-agil-practicas-recomendadas-de-historia-de-usuario-yodiz-project-management-blog/
+
+
+# Ordering object array
+- https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/
