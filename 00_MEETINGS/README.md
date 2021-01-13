@@ -49,3 +49,7 @@ Abhishek Singh7:37 AM
 No issues
 I think we covered the discussions
 We will have a meeting with mauricio
+
+# Estados 
+5 estados con el cliente
+

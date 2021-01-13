@@ -110,10 +110,10 @@ https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.m
 
 # To Do
 - Agregar relacion QuestionaryInteraction to Answer (OK)
+- Guardar respuesta (OK)
 - utm Table enrichment ()
 - al finalizar el nuevo schema actualizar questionary
 - Auth => Admin
-- Guardar respuesta
 - UI QuestionaryConfig
 - UI Questionary
 - UI Option
