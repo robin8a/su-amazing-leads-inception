@@ -148,6 +148,22 @@ aws dynamodb scan \
 id.S	orderNumber.N	questionID.S	title.S
 ```
 
+## QuestionAnswer
+
+1. Export
+```sh
+aws dynamodb scan \
+    --table-name QuestionAnswer-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, __typename.S, createdAt.S, optionID.S, questionID.S, questionaryInteractionID.S, updatedAt.S]" \
+    --output text > QuestionAnswerDataDump.tsv
+```
+
+
+1. Header for QuestionAnswerDataDump.tsv files
+```tsv
+id.S	orderNumber.N	questionID.S	title.S
+```
+
 ## QuestionaryInteraction
 
 1. Export
