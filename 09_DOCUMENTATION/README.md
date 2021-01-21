@@ -72,29 +72,6 @@ Every time that the mouse has a tap action is calculated:
 - [Install and Configure CLI](https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html)
 - [How to configure new profiles](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html)
 
-### Uploading exported files from Cloud9 to S3 bucket
-```sh
-
-cd ~/environment/exports
-aws dynamodb scan \
-    --table-name Interaction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
-    --query "Items[*].[id.S, __typename.S, countOutside.N, createdAt.S, distance.N, distance_left_button_point.N, distance_questionary_point.N, distance_right_button_point.N, dt.N, element.S, epoch.N, height.N, isMouseDetected.BOOL, isPositionOutside.BOOL, isTouchDetected.BOOL, questionID.S, questionaryInteractionID.S, speed.N, speedAverage.N, sumDistance.N, sumTimeMiliseconds.N, sumTimeMilisecondsBeforeNextQuestion.N, type.S, updatedAt.S, width.N, x.N, y.N]" \
-    --output text > InteractionsDataDump.tsv
-ls
-
-aws s3 ls
-# 2020-10-07 14:21:49 amplify-su-amazing-leads-suamaleapi-92136-deployment
-# 2018-08-23 17:09:39 bolivia.diariopenthouse.com
-# 2018-07-11 03:06:06 com.kissygirls
-# 2018-12-09 01:50:13 diariopenthouse.data.csv
-# 2018-08-06 15:38:47 elasticbeanstalk-us-east-1-185733014839
-# 2021-01-13 23:01:31 su-amazing-leads-exports
-# 2018-07-27 20:07:39 www.diariopenthouse.com
-# 2018-07-13 14:26:12 www.sextinghouse.com
-
-aws s3 cp InteractionsDataDump.tsv s3://su-amazing-leads-exports/
-```
-
 ### Add new profile
 ```sh
 sudo aws configure --profile new_profile
@@ -216,6 +193,19 @@ aws dynamodb scan \
   id.S	__typename.S	countOutside.N	createdAt.S	distance.N	distance_left_button_point.N	distance_questionary_point.N	distance_right_button_point.N	dt.N	element.S	epoch.N	height.N	isMouseDetected.BOOL	isPositionOutside.BOOL	isTouchDetected.BOOL	questionID.S	questionaryInteractionID.S	speed.N	speedAverage.N	sumDistance.N	sumTimeMiliseconds.N	sumTimeMilisecondsBeforeNextQuestion.N	type.S	updatedAt.S	width.N	x.N	y.N
 ```
 - [InteractionsDataDump.tsv](../10_APPSYNC/InteractionsDataDump.tsv)  copy - paste (.xlsx or googlesheets)
+
+### Cloud9 Result
+![Data dump](./_images/cloud9_exports.png)
+
+### Uploading exported files from Cloud9 to S3 bucket
+```sh
+
+aws s3 ls
+# 2021-01-13 23:01:31 su-amazing-leads-exports
+
+
+aws s3 cp InteractionsDataDump.tsv s3://su-amazing-leads-exports/
+```
 
 ## Using Dynobase
 - It use the aws configuration
