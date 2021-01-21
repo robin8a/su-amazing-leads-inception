@@ -138,16 +138,29 @@ id.S	isEnable.BOOL	orderNumber.N	question.S	questionaryID.S
 1. Export
 ```sh
 aws dynamodb scan \
-    --table-name Question-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --table-name Option-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
     --query "Items[*].[id.S, orderNumber.N, questionID.S, title.S]" \
     --output text > OptionDataDump.tsv
 ```
 
-"id (S)","orderNumber (N)","questionID (S)","title (S)"
-
-2. Header for QuestionDataDump.tsv files
+2. Header for OptionDataDump.tsv files
 ```tsv
-id.S	isEnable.BOOL	orderNumber.N	question.S	questionaryID.S
+id.S	orderNumber.N	questionID.S	title.S
+```
+
+## QuestionaryInteraction
+
+1. Export
+```sh
+aws dynamodb scan \
+    --table-name QuestionaryInteraction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, __typename.S, browser.S, clientID.S, createdAt.S, ip.S, isBrowser.BOOL, isMobile.BOOL, questionaryEndTime.N, questionaryID.S, questionaryStartTime.N, state_0.N, state_1.N, state_2.N, updatedAt.S, utm.s]" \
+    --output text > QuestionaryInteractionDataDump.tsv
+```
+
+2. Header for QuestionaryInteractionDataDump.tsv files
+```tsv
+id.S	__typename.S	browser.S	clientID.S	createdAt.S	ip.S	isBrowser.BOOL	isMobile.BOOL	questionaryEndTime.N	questionaryID.S	questionaryStartTime.N	state_0.N	state_1.N	state_2.N	updatedAt.S	utm.s
 ```
 
 
