@@ -1,10 +1,16 @@
 # Architecture
-- ![Diagram](_images/architecture.png)
+  ![Diagram](_images/architecture.png)
+
+# Database ER-Model
+  ![ER Model](_images/ER_Model.png)
+
 # Event areas interaction
 ![Areas Interaction KPIs](_images/questionary_areas.png)
 - Blue: questionary area
 - Orange: left button
 - Green: right button
+
+
 
 # Relative Distances
 ![References Points](_images/reference_points.png)
@@ -110,7 +116,42 @@ export AWS_PROFILE=su-amazing-leads-profile
 ### Scan dynamodb Table
 - Tab-separated values (.tsv)
 
-#### All
+# AWS CLI export
+
+## Question
+
+1. Export
+```sh
+aws dynamodb scan \
+    --table-name Question-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, isEnable.BOOL, orderNumber.N, question.S, questionaryID.S]" \
+    --output text > QuestionDataDump.tsv
+```
+
+2. Header for QuestionDataDump.tsv files
+```tsv
+id.S	isEnable.BOOL	orderNumber.N	question.S	questionaryID.S
+```
+
+## Option
+
+1. Export
+```sh
+aws dynamodb scan \
+    --table-name Question-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, orderNumber.N, questionID.S, title.S]" \
+    --output text > OptionDataDump.tsv
+```
+
+"id (S)","orderNumber (N)","questionID (S)","title (S)"
+
+2. Header for QuestionDataDump.tsv files
+```tsv
+id.S	isEnable.BOOL	orderNumber.N	question.S	questionaryID.S
+```
+
+
+
 ```sh
 aws dynamodb scan \
     --table-name Interaction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
