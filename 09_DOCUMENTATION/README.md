@@ -201,7 +201,7 @@ aws dynamodb scan \
 ### Cloud9 Result
 ![Data dump](./_images/cloud9_exports.png)
 
-### Uploading exported files from Cloud9 to S3 bucket
+### Uploading exported files from Cloud9 to S3 bucket and Downloading 
 ```sh
 
 aws s3 ls
