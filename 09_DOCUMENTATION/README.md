@@ -95,6 +95,10 @@ export AWS_PROFILE=su-amazing-leads-profile
 
 # AWS CLI export
 
+<video width="320" height="240" controls>
+  <source src="./_videos/Export_and_Download_DataDump.mov" type="video/mp4">
+</video>
+
 ## Question
 
 1. Export
