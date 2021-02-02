@@ -172,3 +172,12 @@ git push
 
 
 # Amplify hosting
+```sh
+amplify add hosting
+```
+
+# Navegation
+
+```sh
+yarn add react-router-dom
+```
