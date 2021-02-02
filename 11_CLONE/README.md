@@ -133,3 +133,42 @@ aws codecommit create-repository --repository-name su-amazing-leads-roisense --r
     }
 }
 ```
+
+# git
+
+```sh
+ssh-keygen
+/Users/robin8a/.ssh/su_amazing_leads_roisense_rsa
+
+cat ~/.ssh/su_amazing_leads_roisense_rsa.pub
+
+```
+
+
+```sh
+cd ~/.ssh
+ls
+nano config
+
+# Add
+
+# CodeCommit hosts
+Host su_amazing_leads_roisense_rsa
+   HostName git-codecommit.us-east-1.amazonaws.com
+   User APKASWPUM4U3UL2YM5EG
+   IdentityFile ~/.ssh/su_amazing_leads_roisense_rsa
+
+```
+
+https://xiaolishen.medium.com/use-multiple-ssh-keys-for-different-github-accounts-on-the-same-computer-7d7103ca8693
+
+```sh
+# git remote -v
+# git remote rm origin
+
+git remote add origin ssh://su_amazing_leads_inception_rsa/v1/repos/su-amazing-leads-roisense
+git push
+```
+
+
+# Amplify hosting

@@ -40,7 +40,7 @@ Host su_amazing_leads_inception_rsa
 
 ```sh
 # git remote add origin ssh://git-codecommit.us-east-1.amazonaws.com/v1/repos/su-amazing-leads
-
+# git remote -v
 # git remote rm origin
 
 git remote add origin ssh://su_amazing_leads_inception_rsa/v1/repos/su-amazing-leads
