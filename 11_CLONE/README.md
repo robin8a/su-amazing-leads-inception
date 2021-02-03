@@ -689,6 +689,16 @@ GraphQL API KEY: da2-u2wi3kujrjdfrcju7yvdnmwum4
 
 ```
 
+# Questionary Config
+```json
+{
+  "id": "1",
+  "isCreateInteractionQuestionary": false,
+  "isCreateInteractionQuestionaryButton": false,
+  "isShowReactCursorPositionLabel": false,
+  "layout": "none"
+}
+```
 
 # Questionary
 
