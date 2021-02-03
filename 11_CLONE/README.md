@@ -124,7 +124,8 @@ export AWS_PROFILE=su-amazing-leads-roisense-amplify
 aws codecommit create-repository --repository-name su-amazing-leads-roisense --repository-description "Amazing Leads for Roisense" --tags Team=kio --region us-east-1 
 
 ```
-<!-- result -->
+
+## Result
 ```json
 {
     "repositoryMetadata": {
@@ -686,4 +687,163 @@ CREATE_COMPLETE                     apisuamazingleadsroisen                     
 GraphQL endpoint: https://7vwgjop7w5c23gvex3w4eeof7a.appsync-api.us-east-1.amazonaws.com/graphql
 GraphQL API KEY: da2-u2wi3kujrjdfrcju7yvdnmwum4
 
+```
+
+
+# Questionary
+
+```json
+{
+  "id": "1",
+  "isEnable": true,
+  "name": "Amazing Leads"
+}
+```
+1.  Complete la siguiente encuesta y maravíllese con Amazing Leads.
+Iniciar
+2. ¿Desde qué dispositivo estás respondiendo esta encuesta?
+Celular
+Computador
+3. ¿Esta interesado en aumentar las ventas de su empresa?
+Si
+No
+4. ¿Actualmente su empresa invierte en marketing digital?
+Si
+No
+5. ¿Utiliza o ha utilizado procesos de inteligenica Artificial en su empresa?
+Si
+No
+6. ¿Ve en Amazing Leads una manera eficaz de mejorar la calidad de sis leads?
+Si
+No
+7.  Ingresa tus datos
+Nombre y Apellido
+Edad
+Correo
+Teléfono
+
+
+# Questions/Options
+```json
+// Question 1
+{
+  "id": "1",
+  "isEnable": true,
+  "orderNumber": 1,
+  "question": "¿Desde qué dispositivo estás respondiendo esta encuesta?",
+  "questionaryID": "1"
+}
+// Question 1 Option 1
+{
+  "id": "1",
+  "orderNumber": 1,
+  "questionID": "1",
+  "title": "CELULAR"
+}
+// Question 1 Option 2
+{
+  "id": "2",
+  "orderNumber": 2,
+  "questionID": "1",
+  "title": "COMPUTADOR"
+}
+// #########################
+// Question 2
+{
+  "id": "2",
+  "isEnable": true,
+  "orderNumber": 2,
+  "question": "¿Esta interesado en aumentar las ventas de su empresa?",
+  "questionaryID": "1"
+}
+// Question 2 Option 1
+{
+  "id": "3",
+  "orderNumber": 1,
+  "questionID": "2",
+  "title": "SI"
+}
+// Question 2 Option 2
+{
+  "id": "4",
+  "orderNumber": 2,
+  "questionID": "2",
+  "title": "NO"
+}
+
+// #########################
+// Question 3
+{
+  "id": "3",
+  "isEnable": true,
+  "orderNumber": 3,
+  "question": "¿Actualmente su empresa invierte en marketing digital?",
+  "questionaryID": "1"
+}
+
+// Question 3 Option 1
+{
+  "id": "5",
+  "orderNumber": 1,
+  "questionID": "3",
+  "title": "SI"
+}
+// Question 3 Option 2
+{
+  "id": "6",
+  "orderNumber": 2,
+  "questionID": "3",
+  "title": "NO"
+}
+
+
+// #########################
+// Question 4
+{
+  "id": "4",
+  "isEnable": true,
+  "orderNumber": 4,
+  "question": "¿Utiliza o ha utilizado procesos de inteligenica Artificial en su empresa?",
+  "questionaryID": "1"
+}
+
+// Question 4 Option 1
+{
+  "id": "7",
+  "orderNumber": 1,
+  "questionID": "4",
+  "title": "SI"
+}
+// Question 4 Option 2
+{
+  "id": "8",
+  "orderNumber": 2,
+  "questionID": "4",
+  "title": "NO"
+}
+
+// #########################
+// Question 5
+{
+  "id": "5",
+  "isEnable": true,
+  "orderNumber": 5,
+  "question": "¿Ve en Amazing Leads una manera eficaz de mejorar la calidad de sis leads?",
+  "questionaryID": "1"
+}
+
+// Question 5 Option 1
+{
+  "id": "9",
+  "orderNumber": 1,
+  "questionID": "5",
+  "title": "SI"
+}
+// Question 5 Option 2
+{
+  "id": "10",
+  "orderNumber": 2,
+  "questionID": "5",
+  "title": "NO"
+}
 ```
