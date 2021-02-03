@@ -872,9 +872,13 @@ amplify add auth
 npm install aws-amplify @aws-amplify/ui-react
 ```
 
-# AWS Console Amplify configure subdomain ex. comprausado.amazingleads.ai
+# Add Sub Domain
+## AWS Console Amplify configure subdomain ex. comprausado.amazingleads.ai
 - [*** Works *** delete redirects](https://stackoverflow.com/questions/59240000/aws-amplify-subdomain-redirect-to-www-admin-mydomain-com-showing-err-connectio)
 - https://docs.aws.amazon.com/amplify/latest/userguide/to-manage-subdomains.html
 - https://docs.aws.amazon.com/amplify/latest/userguide/to-add-a-custom-domain-managed-by-amazon-route-53.html
 - https://aws.amazon.com/es/blogs/mobile/automatically-create-and-delete-custom-sub-domains-for-your-branch-deployments-with-amplify-console/
 
+
+1. AWS Amplify Console => App Settings => Domain Managment => Add Domain
+![Domain](_images/amplify_add_domain.png)

@@ -14,3 +14,6 @@ uname -r
 git clone https://git-codecommit.us-east-1.amazonaws.com/v1/repos/su-amazing-leads-roisense
 npm install
 ```
+
+# Invite
+![Invite Editor](_images/cloud_9_invite_editors.png)
