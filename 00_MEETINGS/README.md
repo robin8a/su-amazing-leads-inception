@@ -53,3 +53,27 @@ We will have a meeting with mauricio
 # Estados 
 5 estados con el cliente
 
+
+
+# Prioridad Amazing Leads
+
+## Daniel
+1. Token y enlaces de Lorgan para subir los archivos @Mauricio
+2. Compartir el archivo de Santander del estado de los clientes
+
+## Robin
+1. Subir data a Lorgan (Respondo el correo)
+1.1 En el correo solicitar el archivo de python
+
+2. Actualización a través del csv
+3. AL Roisense finalizar
+4. Back-office
+
+## Otros
+### Automatización subida de archivos a lorgan
+### Dashboard 
+ - Numero de personas que completaron el cuestionario, 
+ - cuantos no, 
+ - total por fecha, 
+ - client_id por estado lead nav, utm)
+ - Listados de los lead por estado (filtrar por estado y fechas) => detalle (Extra info)

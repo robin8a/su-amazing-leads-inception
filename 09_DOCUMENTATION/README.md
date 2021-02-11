@@ -175,6 +175,23 @@ aws dynamodb scan \
     --table-name Interaction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
     --query "Items[*].[id.S, __typename.S, countOutside.N, createdAt.S, distance.N, distance_left_button_point.N, distance_questionary_point.N, distance_right_button_point.N, dt.N, element.S, epoch.N, height.N, isActive.BOOL, isMouseDetected.BOOL, isPositionOutside.BOOL, isTouchDetected.BOOL, questionID.S, questionaryInteractionID.S, speed.N, speedAverage.N, sumDistance.N, sumTimeMiliseconds.N, sumTimeMilisecondsBeforeNextQuestion.N, type.S, updatedAt.S, width.N, x.N, y.N]" \
     --output text > InteractionDataDump.tsv
+
+
+aws dynamodb scan \
+    --table-name Interaction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, __typename.S, countOutside.N, createdAt.S, distance.N, distance_left_button_point.N, distance_questionary_point.N, distance_right_button_point.N, dt.N, element.S, epoch.N, height.N, isActive.BOOL, isMouseDetected.BOOL, isPositionOutside.BOOL, isTouchDetected.BOOL, questionID.S, questionaryInteractionID.S, speed.N, speedAverage.N, sumDistance.N, sumTimeMiliseconds.N, sumTimeMilisecondsBeforeNextQuestion.N, type.S, updatedAt.S, width.N, x.N, y.N]" \
+    --filter-expression 'begins_with(createdAt, :val)' \
+    --expression-attribute-values '{":val": {"S": "2021-02-10"}}' \
+    --output text > InteractionDataDump_2021_02_10.tsv
+
+aws s3 cp InteractionDataDump_2021_02_10.tsv s3://su-amazing-leads-exports/
+
+
+# aws dynamodb query \
+#     --table-name Reply \
+#     --key-condition-expression "Id = :id and begins_with(ReplyDateTime, :dt)" \
+#     --expression-attribute-values  file://values.json
+ 
 ```
 
 2. Header for InteractionDataDump.tsv files

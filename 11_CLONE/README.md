@@ -5,10 +5,6 @@
 source ~/.bash_profile
 npx create-react-app su-amazing-leads-roisense
 ```
-# Bootstrap
-```sh
-yarn add bootstrap
-```
 
 # Amplify
 
@@ -102,12 +98,16 @@ Pro tip:
 Try "amplify add api" to create a backend API and then "amplify publish" to deploy everything
 ```
 # Install libraries
+
 ```
 npm i react-cursor-position
 npm i react-device-detect
 npm i react-external-link
 npm install aws-amplify @aws-amplify/ui-react
 yarn add react-router-dom
+npm i aws-amplify @aws-amplify/ui-react
+npm i aws-amplify-react
+yarn add bootstrap
 ```
 # Codecommit
 
@@ -856,4 +856,26 @@ Teléfono
   "questionID": "5",
   "title": "NO"
 }
+```
+
+
+# Amplify auth
+
+```sh
+amplify add auth
+
+Using service: Cognito, provided by: awscloudformation
+ 
+ The current configured provider is Amazon Cognito. 
+ 
+ Do you want to use the default authentication and security configuration? Default confi
+guration
+ Warning: you will not be able to edit these selections. 
+ How do you want users to be able to sign in? Username
+ Do you want to configure advanced settings? No, I am done.
+Successfully added resource suamazingleadsroisend8665328 locally
+
+Some next steps:
+"amplify push" will build all your local backend resources and provision it in the cloud
+"amplify publish" will build all your local backend and frontend resources (if you have hosting category added) and provision it in the cloud
 ```
