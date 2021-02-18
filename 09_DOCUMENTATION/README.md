@@ -4,6 +4,115 @@
 # Database ER-Model
   ![ER Model](_images/ER_Model.png)
 
+## Tables
+
+### QuestionaryConfig (General questionary configuration)
+- id: ID! (Primary Key)
+- isShowReactCursorPositionLabel: Boolean (Show on UI the x, y position)
+- isCreateInteractionQuestionary: Boolean (Save the interactions over the frame questionary)
+- isCreateInteractionQuestionaryButton: Boolean (Save the interactions over the buttons)
+- isDataClient: Boolean (Enable UI at the end of the questionary a form for the Client)
+- externalLink: String (http external link)
+- isExternalLink: Boolean (Enable link for external form )
+- layout: String! (UI Design)
+
+
+### Questionary
+- id: ID! (Primary Key)
+- name: String! (Name)
+- isEnable: Boolean (Enable or Disable)
+- questions: [Question] @connection(keyName: "byQuestionary", fields: ["id"])
+- questionaryInteractions: [QuestionaryInteraction] @connection(keyName: "byQuestionary", fields: ["id"])
+
+
+### QuestionaryInteraction 
+- id: ID! (Primary Key)
+- clientID: String! (Primary Key for Client  )
+- utm: String! (utm from marketing campaign)
+- ip: String (IP Addresss)
+- browser: String (Navegation Browser)
+- questionaryStartTime: AWSTimestamp!
+- questionaryEndTime: AWSTimestamp!
+- isBrowser: Boolean (the client is using a Browser)
+- isMobile: Boolean (the client is using a Mobile Device)
+- state_0:	Int 
+- state_1: Int	
+- state_2: Int
+- dataClientJson: String (Extra data from the company of the Clients. Ex. loan, prices, etc. This data is updated using .csv file from the Company)
+- questionaryID: ID! (FK from Questionary)
+- questionary: Questionary @connection(fields: ["questionaryID"])
+- interactions: [Interaction] @connection(keyName: "byQuestionaryInteraction", fields: ["id"])
+- questionAnswers: [QuestionAnswer] @connection(keyName: "byQuestionaryInteraction", fields: ["id"])
+
+```graphql
+
+type Question @model @key(name: "byQuestionary", fields: ["questionaryID"]) {
+  id: ID!
+  question: String!
+  questionaryID: ID!
+  isEnable: Boolean!
+  orderNumber: Int
+  questionary: Questionary @connection(fields: ["questionaryID"])
+  options: [Option] @connection(keyName: "byQuestion", fields: ["id"])
+  interactions: [Interaction] @connection(keyName: "byQuestion", fields: ["id"])
+  questionAnswers: [QuestionAnswer] @connection(keyName: "byQuestion", fields: ["id"])
+}
+
+type Option @model @key(name: "byQuestion", fields: ["questionID"]) {
+  id: ID!
+  title: String!
+  orderNumber: Int
+  questionID: ID!
+  question: Question @connection(fields: ["questionID"])
+  questionAnswers: [QuestionAnswer] @connection(keyName: "byOption", fields: ["id"])
+}
+
+type QuestionAnswer @model @key(name: "byQuestion", fields: ["questionID"]) @key(name: "byOption", fields: ["optionID"]) @key(name: "byQuestionaryInteraction", fields: ["questionaryInteractionID"]){
+  id: ID!
+  questionID: ID!
+  question: Question @connection(fields: ["questionID"])
+  optionID: ID!
+  option: Option @connection(fields: ["optionID"])
+  questionaryInteractionID: ID!
+  questionaryInteraction: QuestionaryInteraction @connection(fields: ["questionaryInteractionID"])
+}
+
+type Interaction @model @key(name: "byQuestion", fields: ["questionID"]) @key(name: "byQuestionaryInteraction", fields: ["questionaryInteractionID"]){
+  id: ID!
+  groupInteractionId: String
+  type: String!
+  element: String!
+  epoch: AWSTimestamp!
+  isMouseDetected: Boolean
+  isTouchDetected: Boolean
+  height: Float
+  width: Float
+  isActive: Boolean
+  isActiveClick: Boolean
+  isActiveTouch: Boolean
+  isPositionOutside: Boolean
+  x: Int
+  y: Int
+  distance: Float
+  speed: Float
+  speedAverage: Float
+  sumTimeMiliseconds: Float
+  dt: Float
+  sumDistance: Float
+  countOutside: Int,
+  distance_questionary_point: Float
+  distance_left_button_point: Float
+  distance_right_button_point: Float
+  sumTimeMilisecondsBeforeNextQuestion: Float
+  questionID: ID!
+  question: Question @connection(fields: ["questionID"])
+  questionaryInteractionID: ID!
+  questionaryInteraction: QuestionaryInteraction @connection(fields: ["questionaryInteractionID"])
+}
+
+```
+
+
 # Event areas interaction
 ![Areas Interaction KPIs](_images/questionary_areas.png)
 - Blue: questionary area
