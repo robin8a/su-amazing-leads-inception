@@ -107,6 +107,9 @@ aws dynamodb scan \
     --table-name Question-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
     --query "Items[*].[id.S, isEnable.BOOL, orderNumber.N, question.S, questionaryID.S]" \
     --output text > QuestionDataDump.tsv
+  
+aws s3 cp QuestionDataDump.tsv s3://su-amazing-leads-exports/
+
 ```
 
 2. Header for QuestionDataDump.tsv files
@@ -122,6 +125,8 @@ aws dynamodb scan \
     --table-name Option-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
     --query "Items[*].[id.S, orderNumber.N, questionID.S, title.S]" \
     --output text > OptionDataDump.tsv
+
+aws s3 cp OptionDataDump.tsv s3://su-amazing-leads-exports/
 ```
 
 2. Header for OptionDataDump.tsv files
@@ -137,12 +142,22 @@ aws dynamodb scan \
     --table-name QuestionAnswer-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
     --query "Items[*].[id.S, __typename.S, createdAt.S, optionID.S, questionID.S, questionaryInteractionID.S, updatedAt.S]" \
     --output text > QuestionAnswerDataDump.tsv
-```
 
+aws dynamodb scan \
+    --table-name QuestionAnswer-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, __typename.S, createdAt.S, optionID.S, questionID.S, questionaryInteractionID.S, updatedAt.S]" \
+    --filter-expression 'begins_with(createdAt, :val)' \
+    --expression-attribute-values '{":val": {"S": "2021-02-12"}}' \
+    --output text > QuestionAnswerDataDump_2021_02_12.tsv
+
+
+aws s3 cp QuestionAnswerDataDump_2021_02_12.tsv s3://su-amazing-leads-exports/
+
+```
 
 1. Header for QuestionAnswerDataDump.tsv files
 ```tsv
-id.S	orderNumber.N	questionID.S	title.S
+id	__typename	createdAt	optionID	questionID	questionaryInteractionID	updatedAt
 ```
 
 ## QuestionaryInteraction
@@ -153,6 +168,16 @@ aws dynamodb scan \
     --table-name QuestionaryInteraction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
     --query "Items[*].[id.S, __typename.S, browser.S, clientID.S, createdAt.S, ip.S, isBrowser.BOOL, isMobile.BOOL, questionaryEndTime.N, questionaryID.S, questionaryStartTime.N, state_0.N, state_1.N, state_2.N, updatedAt.S, utm.s]" \
     --output text > QuestionaryInteractionDataDump.tsv
+
+aws dynamodb scan \
+    --table-name QuestionaryInteraction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
+    --query "Items[*].[id.S, __typename.S, browser.S, clientID.S, createdAt.S, ip.S, isBrowser.BOOL, isMobile.BOOL, questionaryEndTime.N, questionaryID.S, questionaryStartTime.N, state_0.N, state_1.N, state_2.N, updatedAt.S, utm.s]" \
+    --filter-expression 'begins_with(createdAt, :val)' \
+    --expression-attribute-values '{":val": {"S": "2021-02-12"}}' \
+    --output text > QuestionaryInteractionDataDump_2021_02_12.tsv
+
+aws s3 cp QuestionaryInteractionDataDump_2021_02_12.tsv s3://su-amazing-leads-exports/
+
 ```
 
 2. Header for QuestionaryInteractionDataDump.tsv files
@@ -181,10 +206,10 @@ aws dynamodb scan \
     --table-name Interaction-mexfa73ymfc6rmlwqmt6vu4vf4-suamaleapi \
     --query "Items[*].[id.S, __typename.S, countOutside.N, createdAt.S, distance.N, distance_left_button_point.N, distance_questionary_point.N, distance_right_button_point.N, dt.N, element.S, epoch.N, height.N, isActive.BOOL, isMouseDetected.BOOL, isPositionOutside.BOOL, isTouchDetected.BOOL, questionID.S, questionaryInteractionID.S, speed.N, speedAverage.N, sumDistance.N, sumTimeMiliseconds.N, sumTimeMilisecondsBeforeNextQuestion.N, type.S, updatedAt.S, width.N, x.N, y.N]" \
     --filter-expression 'begins_with(createdAt, :val)' \
-    --expression-attribute-values '{":val": {"S": "2021-02-10"}}' \
-    --output text > InteractionDataDump_2021_02_10.tsv
+    --expression-attribute-values '{":val": {"S": "2021-02-12"}}' \
+    --output text > InteractionDataDump_2021_02_12.tsv
 
-aws s3 cp InteractionDataDump_2021_02_10.tsv s3://su-amazing-leads-exports/
+aws s3 cp InteractionDataDump_2021_02_12.tsv s3://su-amazing-leads-exports/
 
 
 # aws dynamodb query \
