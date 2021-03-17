@@ -277,4 +277,6 @@ Some things to try next:
 ```sh
 gsutil -m cp -r local_dir gs://my-bucket/data/
 gsutil -m cp -r local_dir gs://su-amazing-leads/
+gsutil -m cp -r 2021-03-16 gs://su-amazing-leads/
+
 ```
