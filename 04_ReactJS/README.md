@@ -128,3 +128,11 @@ https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.m
 
 # Ordering object array
 - https://flaviocopes.com/how-to-sort-array-of-objects-by-property-javascript/
+
+# Is it possible to customize default Sign Up, Sign In screens of aws-amplify-react-native package?
+- https://aws-amplify.github.io/amplify-js/api/classes/authenticatorcomponentcore.html
+- https://blog.kylegalbraith.com/2018/11/29/how-to-easily-customize-the-aws-amplify-authentication-ui/
+- https://medium.com/@coryschimmoeller/customizing-the-authentication-experience-of-amplifys-withauthenticator-e6f2089ff469
+- https://stackoverflow.com/questions/50859539/is-it-possible-to-customize-default-sign-up-sign-in-screens-of-aws-amplify-reac
+- https://docs.amplify.aws/lib/auth/customui/q/platform/js#customize-ui-theme
+- https://medium.com/@jordan.eckowitz/aws-amplify-custom-authentication-3876fb3f6712

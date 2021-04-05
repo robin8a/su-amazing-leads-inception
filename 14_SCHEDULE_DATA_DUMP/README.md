@@ -280,3 +280,8 @@ gsutil -m cp -r local_dir gs://su-amazing-leads/
 gsutil -m cp -r 2021-03-16 gs://su-amazing-leads/
 
 ```
+
+
+```sh
+export GOOGLE_APPLICATION_CREDENTIALS=/home/lorgan_enigma_dev_gcs_bq_svc_acct.json
+```
