@@ -77,3 +77,11 @@ We will have a meeting with mauricio
  - total por fecha, 
  - client_id por estado lead nav, utm)
  - Listados de los lead por estado (filtrar por estado y fechas) => detalle (Extra info)
+
+
+# 06 Abril Entrega Mauricio 
+- Cuestionario cliente
+- Extra data, agregar doble comilla
+- Estilos con @jairo al admon
+- Cuestionario finalizados y no finalizados
+- Filtro por fechas

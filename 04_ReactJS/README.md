@@ -136,3 +136,4 @@ https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.m
 - https://stackoverflow.com/questions/50859539/is-it-possible-to-customize-default-sign-up-sign-in-screens-of-aws-amplify-reac
 - https://docs.amplify.aws/lib/auth/customui/q/platform/js#customize-ui-theme
 - https://medium.com/@jordan.eckowitz/aws-amplify-custom-authentication-3876fb3f6712
+- https://pandeysoni.medium.com/how-to-setup-customize-amplify-authentication-ui-using-hooks-36442f5fdc
