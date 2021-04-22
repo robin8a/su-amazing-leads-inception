@@ -80,8 +80,9 @@ We will have a meeting with mauricio
 
 
 # 06 Abril Entrega Mauricio 
-- Cuestionario cliente
+- Cuestionario cliente (QA)
+- Add new Question
 - Extra data, agregar doble comilla
 - Estilos con @jairo al admon
-- Cuestionario finalizados y no finalizados
-- Filtro por fechas
+- Numero  de cuestionarios finalizados y no finalizados
+- Filtro por fechas (test using aws app sync)

@@ -281,7 +281,13 @@ gsutil -m cp -r 2021-03-16 gs://su-amazing-leads/
 
 ```
 
-
+- https://medium.com/google-cloud/how-to-use-multiple-accounts-with-gcloud-848fdb53a39a
+- 
 ```sh
 export GOOGLE_APPLICATION_CREDENTIALS=/home/lorgan_enigma_dev_gcs_bq_svc_acct.json
+
+gsutil -m cp -r "$data_dump_path$data_dump_today_date" gs://su-amazing-leads/
+
+gsutil -m cp -r README.md gs://santander_inbox/amazing_leads/
+
 ```
