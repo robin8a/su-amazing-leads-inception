@@ -137,3 +137,64 @@ https://github.com/dowjones/react-tutorial/blob/master/AWS.Cloud9.Instructions.m
 - https://docs.amplify.aws/lib/auth/customui/q/platform/js#customize-ui-theme
 - https://medium.com/@jordan.eckowitz/aws-amplify-custom-authentication-3876fb3f6712
 - https://pandeysoni.medium.com/how-to-setup-customize-amplify-authentication-ui-using-hooks-36442f5fdc
+
+
+# Create Question with options
+- https://docs.amplify.aws/cli/graphql-transformer/overview#test-the-api
+- https://geekyants.com/blog/many-to-many-relations-in-aws-amplify-using-react-321
+
+
+```js
+createQuestion(input: $input, condition: $condition) {
+      id
+      question
+      questionaryID
+      isEnable
+      orderNumber
+      questionary {
+        id
+        name
+        isEnable
+        questions {
+          nextToken
+        }
+        questionaryInteractions {
+          nextToken
+        }
+      }
+      options {
+        items {
+          id
+          title
+          orderNumber
+          questionID
+        }
+        nextToken
+      }
+}
+
+mutation MyMutation {
+  createQuestion(input: 
+    {
+      id: "id-borrar", 
+      isEnable: false, 
+      orderNumber: 10, 
+      question: "test", 
+      questionaryID: "1",
+    }) {
+    id
+    isEnable
+    orderNumber
+    question
+    questionaryID
+    options {
+      items {
+        id
+        orderNumber
+        title
+      }
+    }
+  }
+}
+
+```
