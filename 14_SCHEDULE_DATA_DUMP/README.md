@@ -37,26 +37,32 @@ Instance summary for i-00c02549094d1e17a (kio-amazing-leads-data-export)
 
 
 ```sh
-mkdir amazing-leads
-aws configure
-mkdir scripts
-cd scripts
-mkdir conf
-mkdir crontab
+# mkdir amazing-leads
+# aws configure
+# mkdir scripts
+# cd scripts
+# mkdir conf
+# mkdir crontab
 chmod 400 kio-amazing-leads-kp.pem
 # ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-89-79-109.compute-1.amazonaws.com
 # ssh -i <Your.pem> ec2-user@<YourServerIP>
 # ssh -i kio-amazing-leads-kp.pem ec2-user@3.231.213.100
 
-ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-238-222-251.compute-1.amazonaws.com
+ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-216-23-246.compute-1.amazonaws.com
 
 ```
 ## zsh
 
 ```sh
-sudo yum update && sudo yum install zsh
+sudo yum update
+sudo yum install zsh
 ```
 
+## Configure aws 
+
+```sh
+aws configure
+```
 
 ## git
 ```sh
@@ -71,12 +77,7 @@ cd crontab
 chmod 777 *.sh
 ```
 
-## Configure aws 
 
-```sh
-aws configure
-
-```
 ### Change profile
 ```sh
 aws configure list
@@ -108,11 +109,11 @@ export AWS_PROFILE=dunrok
 ```sh
 sudo yum install python37
 python3 --version
-curl -O https://bootstrap.pypa.io/get-pip.py
+# curl -O https://bootstrap.pypa.io/get-pip.py
 
-pip install --upgrade google-cloud-speech
-pip install google-cloud
-pip install --upgrade google-cloud-storage
+# sudo pip3 install --upgrade google-cloud-speech
+# sudo pip3 install google-cloud
+# sudo pip3 install --upgrade google-cloud-storage
 
 ```
 
@@ -145,119 +146,122 @@ tr '\t' ',' < "$data_dump_path$data_dump_today_date/"QuestionAnswerDataDump_$dat
 
 ## Install
 
--  https://cloud.google.com/storage/docs/gsutil_install#linux  
+-  [Amazon Linux 2 Install instructions](https://cloud.google.com/storage/docs/gsutil_install#linux)
 
 ```sh
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-337.0.0-linux-x86_64.tar.gz
 tar -xf google-cloud-sdk-337.0.0-linux-x86_64.tar.gz
 
-./google-cloud-sdk/install.sh
+sudo ./google-cloud-sdk/install.sh
 
 
-Welcome to the Google Cloud SDK!
+# Welcome to the Google Cloud SDK!
 
-To help improve the quality of this product, we collect anonymized usage data
-and anonymized stacktraces when crashes are encountered; additional information
-is available at <https://cloud.google.com/sdk/usage-statistics>. This data is
-handled in accordance with our privacy policy
-<https://cloud.google.com/terms/cloud-privacy-notice>. You may choose to opt in this
-collection now (by choosing 'Y' at the below prompt), or at any time in the
-future by running the following command:
+# To help improve the quality of this product, we collect anonymized usage data
+# and anonymized stacktraces when crashes are encountered; additional information
+# is available at <https://cloud.google.com/sdk/usage-statistics>. This data is
+# handled in accordance with our privacy policy
+# <https://cloud.google.com/terms/cloud-privacy-notice>. You may choose to opt in this
+# collection now (by choosing 'Y' at the below prompt), or at any time in the
+# future by running the following command:
 
-    gcloud config set disable_usage_reporting false
+#     gcloud config set disable_usage_reporting false
 
-Do you want to help improve the Google Cloud SDK (y/N)?  y
-
-
-Your current Cloud SDK version is: 331.0.0
-The latest available version is: 332.0.0
-
-┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                                   Components                                                  │
-├──────────────────┬──────────────────────────────────────────────────────┬──────────────────────────┬──────────┤
-│      Status      │                         Name                         │            ID            │   Size   │
-├──────────────────┼──────────────────────────────────────────────────────┼──────────────────────────┼──────────┤
-│ Update Available │ Cloud SDK Core Libraries                             │ core                     │ 17.6 MiB │
-│ Not Installed    │ App Engine Go Extensions                             │ app-engine-go            │  4.9 MiB │
-│ Not Installed    │ Appctl                                               │ appctl                   │ 21.0 MiB │
-│ Not Installed    │ Cloud Bigtable Command Line Tool                     │ cbt                      │  7.7 MiB │
-│ Not Installed    │ Cloud Bigtable Emulator                              │ bigtable                 │  6.6 MiB │
-│ Not Installed    │ Cloud Datalab Command Line Tool                      │ datalab                  │  < 1 MiB │
-│ Not Installed    │ Cloud Datastore Emulator                             │ cloud-datastore-emulator │ 18.4 MiB │
-│ Not Installed    │ Cloud Firestore Emulator                             │ cloud-firestore-emulator │ 41.6 MiB │
-│ Not Installed    │ Cloud Pub/Sub Emulator                               │ pubsub-emulator          │ 60.4 MiB │
-│ Not Installed    │ Cloud SQL Proxy                                      │ cloud_sql_proxy          │  7.6 MiB │
-│ Not Installed    │ Cloud Spanner Emulator                               │ cloud-spanner-emulator   │ 21.8 MiB │
-│ Not Installed    │ Emulator Reverse Proxy                               │ emulator-reverse-proxy   │ 14.5 MiB │
-│ Not Installed    │ Google Cloud Build Local Builder                     │ cloud-build-local        │  6.3 MiB │
-│ Not Installed    │ Google Container Registry's Docker credential helper │ docker-credential-gcr    │  1.8 MiB │
-│ Not Installed    │ Kustomize                                            │ kustomize                │ 25.9 MiB │
-│ Not Installed    │ Minikube                                             │ minikube                 │ 23.9 MiB │
-│ Not Installed    │ Nomos CLI                                            │ nomos                    │ 20.2 MiB │
-│ Not Installed    │ On-Demand Scanning API extraction helper             │ local-extract            │ 12.3 MiB │
-│ Not Installed    │ Skaffold                                             │ skaffold                 │ 16.1 MiB │
-│ Not Installed    │ anthos-auth                                          │ anthos-auth              │ 16.4 MiB │
-│ Not Installed    │ config-connector                                     │ config-connector         │ 43.2 MiB │
-│ Not Installed    │ gcloud Alpha Commands                                │ alpha                    │  < 1 MiB │
-│ Not Installed    │ gcloud Beta Commands                                 │ beta                     │  < 1 MiB │
-│ Not Installed    │ gcloud app Java Extensions                           │ app-engine-java          │ 53.1 MiB │
-│ Not Installed    │ gcloud app Python Extensions                         │ app-engine-python        │  6.1 MiB │
-│ Not Installed    │ gcloud app Python Extensions (Extra Libraries)       │ app-engine-python-extras │ 27.1 MiB │
-│ Not Installed    │ kpt                                                  │ kpt                      │ 11.6 MiB │
-│ Not Installed    │ kubectl                                              │ kubectl                  │  < 1 MiB │
-│ Not Installed    │ kubectl-oidc                                         │ kubectl-oidc             │ 16.4 MiB │
-│ Not Installed    │ pkg                                                  │ pkg                      │          │
-│ Installed        │ BigQuery Command Line Tool                           │ bq                       │  < 1 MiB │
-│ Installed        │ Cloud Storage Command Line Tool                      │ gsutil                   │  3.9 MiB │
-└──────────────────┴──────────────────────────────────────────────────────┴──────────────────────────┴──────────┘
-To install or remove components at your current SDK version [331.0.0], run:
-  $ gcloud components install COMPONENT_ID
-  $ gcloud components remove COMPONENT_ID
-
-To update your SDK installation to the latest version [332.0.0], run:
-  $ gcloud components update
+# Do you want to help improve the Google Cloud SDK (y/N)?  y
 
 
-Modify profile to update your $PATH and enable shell command 
-completion?
+# Your current Cloud SDK version is: 331.0.0
+# The latest available version is: 332.0.0
 
-Do you want to continue (Y/n)?  Y
+# ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+# │                                                   Components                                                  │
+# ├──────────────────┬──────────────────────────────────────────────────────┬──────────────────────────┬──────────┤
+# │      Status      │                         Name                         │            ID            │   Size   │
+# ├──────────────────┼──────────────────────────────────────────────────────┼──────────────────────────┼──────────┤
+# │ Update Available │ Cloud SDK Core Libraries                             │ core                     │ 17.6 MiB │
+# │ Not Installed    │ App Engine Go Extensions                             │ app-engine-go            │  4.9 MiB │
+# │ Not Installed    │ Appctl                                               │ appctl                   │ 21.0 MiB │
+# │ Not Installed    │ Cloud Bigtable Command Line Tool                     │ cbt                      │  7.7 MiB │
+# │ Not Installed    │ Cloud Bigtable Emulator                              │ bigtable                 │  6.6 MiB │
+# │ Not Installed    │ Cloud Datalab Command Line Tool                      │ datalab                  │  < 1 MiB │
+# │ Not Installed    │ Cloud Datastore Emulator                             │ cloud-datastore-emulator │ 18.4 MiB │
+# │ Not Installed    │ Cloud Firestore Emulator                             │ cloud-firestore-emulator │ 41.6 MiB │
+# │ Not Installed    │ Cloud Pub/Sub Emulator                               │ pubsub-emulator          │ 60.4 MiB │
+# │ Not Installed    │ Cloud SQL Proxy                                      │ cloud_sql_proxy          │  7.6 MiB │
+# │ Not Installed    │ Cloud Spanner Emulator                               │ cloud-spanner-emulator   │ 21.8 MiB │
+# │ Not Installed    │ Emulator Reverse Proxy                               │ emulator-reverse-proxy   │ 14.5 MiB │
+# │ Not Installed    │ Google Cloud Build Local Builder                     │ cloud-build-local        │  6.3 MiB │
+# │ Not Installed    │ Google Container Registry's Docker credential helper │ docker-credential-gcr    │  1.8 MiB │
+# │ Not Installed    │ Kustomize                                            │ kustomize                │ 25.9 MiB │
+# │ Not Installed    │ Minikube                                             │ minikube                 │ 23.9 MiB │
+# │ Not Installed    │ Nomos CLI                                            │ nomos                    │ 20.2 MiB │
+# │ Not Installed    │ On-Demand Scanning API extraction helper             │ local-extract            │ 12.3 MiB │
+# │ Not Installed    │ Skaffold                                             │ skaffold                 │ 16.1 MiB │
+# │ Not Installed    │ anthos-auth                                          │ anthos-auth              │ 16.4 MiB │
+# │ Not Installed    │ config-connector                                     │ config-connector         │ 43.2 MiB │
+# │ Not Installed    │ gcloud Alpha Commands                                │ alpha                    │  < 1 MiB │
+# │ Not Installed    │ gcloud Beta Commands                                 │ beta                     │  < 1 MiB │
+# │ Not Installed    │ gcloud app Java Extensions                           │ app-engine-java          │ 53.1 MiB │
+# │ Not Installed    │ gcloud app Python Extensions                         │ app-engine-python        │  6.1 MiB │
+# │ Not Installed    │ gcloud app Python Extensions (Extra Libraries)       │ app-engine-python-extras │ 27.1 MiB │
+# │ Not Installed    │ kpt                                                  │ kpt                      │ 11.6 MiB │
+# │ Not Installed    │ kubectl                                              │ kubectl                  │  < 1 MiB │
+# │ Not Installed    │ kubectl-oidc                                         │ kubectl-oidc             │ 16.4 MiB │
+# │ Not Installed    │ pkg                                                  │ pkg                      │          │
+# │ Installed        │ BigQuery Command Line Tool                           │ bq                       │  < 1 MiB │
+# │ Installed        │ Cloud Storage Command Line Tool                      │ gsutil                   │  3.9 MiB │
+# └──────────────────┴──────────────────────────────────────────────────────┴──────────────────────────┴──────────┘
+# To install or remove components at your current SDK version [331.0.0], run:
+#   $ gcloud components install COMPONENT_ID
+#   $ gcloud components remove COMPONENT_ID
 
-The Google Cloud SDK installer will now prompt you to update an rc 
-file to bring the Google Cloud CLIs into your environment.
-
-Enter a path to an rc file to update, or leave blank to use 
-[/home/ec2-user/.bashrc]:  
-Backing up [/home/ec2-user/.bashrc] to [/home/ec2-user/.bashrc.backup].
-[/home/ec2-user/.bashrc] has been updated.
-
-==> Start a new shell for the changes to take effect.
+# To update your SDK installation to the latest version [332.0.0], run:
+#   $ gcloud components update
 
 
-For more information on how to get started, please visit:
-  https://cloud.google.com/sdk/docs/quickstarts
+# Modify profile to update your $PATH and enable shell command 
+# completion?
+
+# Do you want to continue (Y/n)?  Y
+
+# The Google Cloud SDK installer will now prompt you to update an rc 
+# file to bring the Google Cloud CLIs into your environment.
+
+# Enter a path to an rc file to update, or leave blank to use 
+#### IMPORTANT ####
+[/home/ec2-user/.bashrc]: ~/.bashrc
+# restart the terminal
+#### IMPORTANT ####
+# Backing up [/home/ec2-user/.bashrc] to [/home/ec2-user/.bashrc.backup].
+# [/home/ec2-user/.bashrc] has been updated.
+
+# ==> Start a new shell for the changes to take effect.
+
+
+# For more information on how to get started, please visit:
+  # https://cloud.google.com/sdk/docs/quickstarts
 ```
 
 ## gcloud init
 
 ```sh
-./google-cloud-sdk/bin/gcloud init
+# ./google-cloud-sdk/bin/gcloud init
 gcloud init
-Welcome! This command will take you through the configuration of gcloud.
+# Welcome! This command will take you through the configuration of gcloud.
 
-Your current configuration has been set to: [default]
+# Your current configuration has been set to: [default]
 
-You can skip diagnostics next time by using the following flag:
-  gcloud init --skip-diagnostics
+# You can skip diagnostics next time by using the following flag:
+#   gcloud init --skip-diagnostics
 
-Network diagnostic detects and fixes local network connection issues.
-Checking network connection...done.                                                                                                                                               
-Reachability Check passed.
-Network diagnostic passed (1/1 checks passed).
+# Network diagnostic detects and fixes local network connection issues.
+# Checking network connection...done.                                                                                                                                               
+# Reachability Check passed.
+# Network diagnostic passed (1/1 checks passed).
 
 You must log in to continue. Would you like to log in (Y/n)?  Y
 
-Go to the following link in your browser:
+# Go to the following link in your browser:
 
     https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=32555940559.apps.googleusercontent.com&redirect_uri=urn%3Aietf%3Awg%3Aoauth%3A2.0%3Aoob&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=VFt6WSxIk4B4kfZN2ccJkCAeXra0ke&prompt=consent&access_type=offline&code_challenge=VZ3ElXmkbYwuUPbxPvEsEq2McVA-dFok5jrdHiBztfU&code_challenge_method=S256
 
@@ -279,31 +283,31 @@ item):  1
 
 Your current project has been set to: [kio-sl-emap].
 
-Not setting default zone/region (this feature makes it easier to use
-[gcloud compute] by setting an appropriate default value for the
---zone and --region flag).
-See https://cloud.google.com/compute/docs/gcloud-compute section on how to set
-default compute region and zone manually. If you would like [gcloud init] to be
-able to do this for you the next time you run it, make sure the
-Compute Engine API is enabled for your project on the
-https://console.developers.google.com/apis page.
+# Not setting default zone/region (this feature makes it easier to use
+# [gcloud compute] by setting an appropriate default value for the
+# --zone and --region flag).
+# See https://cloud.google.com/compute/docs/gcloud-compute section on how to set
+# default compute region and zone manually. If you would like [gcloud init] to be
+# able to do this for you the next time you run it, make sure the
+# Compute Engine API is enabled for your project on the
+# https://console.developers.google.com/apis page.
 
-Created a default .boto configuration file at [/home/ec2-user/.boto]. See this file and
-[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
-information about configuring Google Cloud Storage.
-Your Google Cloud SDK is configured and ready to use!
+# Created a default .boto configuration file at [/home/ec2-user/.boto]. See this file and
+# [https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+# information about configuring Google Cloud Storage.
+# Your Google Cloud SDK is configured and ready to use!
 
-* Commands that require authentication will use robin8a@gmail.com by default
-* Commands will reference project `kio-sl-emap` by default
-Run `gcloud help config` to learn how to change individual settings
+# * Commands that require authentication will use robin8a@gmail.com by default
+# * Commands will reference project `kio-sl-emap` by default
+# Run `gcloud help config` to learn how to change individual settings
 
-This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
-Run `gcloud topic configurations` to learn more.
+# This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
+# Run `gcloud topic configurations` to learn more.
 
-Some things to try next:
+# Some things to try next:
 
-* Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
-* Run `gcloud topic --help` to learn about advanced features of the SDK like arg files and output formatting
+# * Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+# * Run `gcloud topic --help` to learn about advanced features of the SDK like arg files and output formatting
 ```
 
 ### Testing
