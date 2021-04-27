@@ -33,6 +33,9 @@ git restore :/
 ```
 
 # Setup
+Instance summary for i-00c02549094d1e17a (kio-amazing-leads-data-export)
+
+
 ```sh
 mkdir amazing-leads
 aws configure
@@ -41,14 +44,40 @@ cd scripts
 mkdir conf
 mkdir crontab
 chmod 400 kio-amazing-leads-kp.pem
-ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-89-79-109.compute-1.amazonaws.com
+# ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-89-79-109.compute-1.amazonaws.com
+# ssh -i <Your.pem> ec2-user@<YourServerIP>
+# ssh -i kio-amazing-leads-kp.pem ec2-user@3.231.213.100
 
-sudo yum update && sudo yum install zsh
+ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-238-222-251.compute-1.amazonaws.com
 
 ```
+## zsh
 
-#
+```sh
+sudo yum update && sudo yum install zsh
+```
 
+
+## git
+```sh
+sudo yum install git
+git clone https://github.com/robin8a/su-amazing-leads-data-dump-scripts.git
+```
+
+## 
+```sh
+cd ~/su-amazing-leads-data-dump-scripts
+cd crontab
+chmod 777 *.sh
+```
+
+## Configure aws 
+
+```sh
+aws configure
+
+```
+### Change profile
 ```sh
 aws configure list
 nano ~/.aws/credentials
@@ -116,11 +145,15 @@ tr '\t' ',' < "$data_dump_path$data_dump_today_date/"QuestionAnswerDataDump_$dat
 
 ## Install
 
--  https://cloud.google.com/storage/docs/gsutil_install#linux
--  
+-  https://cloud.google.com/storage/docs/gsutil_install#linux  
 
 ```sh
+curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-337.0.0-linux-x86_64.tar.gz
+tar -xf google-cloud-sdk-337.0.0-linux-x86_64.tar.gz
+
 ./google-cloud-sdk/install.sh
+
+
 Welcome to the Google Cloud SDK!
 
 To help improve the quality of this product, we collect anonymized usage data
@@ -208,6 +241,7 @@ For more information on how to get started, please visit:
 ## gcloud init
 
 ```sh
+./google-cloud-sdk/bin/gcloud init
 gcloud init
 Welcome! This command will take you through the configuration of gcloud.
 
@@ -291,3 +325,8 @@ gsutil -m cp -r "$data_dump_path$data_dump_today_date" gs://su-amazing-leads/
 gsutil -m cp -r README.md gs://santander_inbox/amazing_leads/
 
 ```
+
+
+# Shell Scripting
+
+- https://www.shellscript.sh/
