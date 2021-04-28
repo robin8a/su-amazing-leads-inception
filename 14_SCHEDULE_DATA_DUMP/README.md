@@ -149,9 +149,11 @@ tr '\t' ',' < "$data_dump_path$data_dump_today_date/"QuestionAnswerDataDump_$dat
 -  [Amazon Linux 2 Install instructions](https://cloud.google.com/storage/docs/gsutil_install#linux)
 
 ```sh
+# Install package
 curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-337.0.0-linux-x86_64.tar.gz
+# Untar
 tar -xf google-cloud-sdk-337.0.0-linux-x86_64.tar.gz
-
+# Install
 sudo ./google-cloud-sdk/install.sh
 
 
