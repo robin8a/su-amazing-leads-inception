@@ -34,6 +34,7 @@ git restore :/
 
 # Setup
 Instance summary for i-00c02549094d1e17a (kio-amazing-leads-data-export)
+kio-amazing-leads-data-export-4
 
 
 ```sh
@@ -49,7 +50,7 @@ chmod 400 kio-amazing-leads-kp.pem
 # ssh -i kio-amazing-leads-kp.pem ec2-user@3.231.213.100
 
 ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-216-23-246.compute-1.amazonaws.com
-
+ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-231-167-134.compute-1.amazonaws.com
 ```
 ## zsh
 
@@ -61,6 +62,7 @@ sudo yum install zsh
 ## Configure aws 
 
 ```sh
+# amazing leads on keeweb
 aws configure
 ```
 
@@ -82,7 +84,7 @@ chmod 777 *.sh
 ```sh
 aws configure list
 nano ~/.aws/credentials
-export AWS_PROFILE=dunrok
+# export AWS_PROFILE=dunrok
 
 ```
 
@@ -231,7 +233,9 @@ sudo ./google-cloud-sdk/install.sh
 
 # Enter a path to an rc file to update, or leave blank to use 
 #### IMPORTANT ####
-[/home/ec2-user/.bashrc]: ~/.bashrc
+[/home/ec2-user/.bashrc]: source ~/.bashrc
+[/root/.bashrc]:  source ~/.bashrc
+[/root/.bashrc]:  ~/.bashrc
 # restart the terminal
 #### IMPORTANT ####
 # Backing up [/home/ec2-user/.bashrc] to [/home/ec2-user/.bashrc.backup].
