@@ -49,8 +49,10 @@ chmod 400 kio-amazing-leads-kp.pem
 # ssh -i <Your.pem> ec2-user@<YourServerIP>
 # ssh -i kio-amazing-leads-kp.pem ec2-user@3.231.213.100
 
-ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-216-23-246.compute-1.amazonaws.com
-ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-231-167-134.compute-1.amazonaws.com
+# ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-216-23-246.compute-1.amazonaws.com
+# ssh -i "kio-amazing-leads-kp.pem" ec2-user@ec2-3-231-167-134.compute-1.amazonaws.com
+
+ssh -i "kio-amazing-leads-kp.pem" ubuntu@ec2-34-201-30-214.compute-1.amazonaws.com
 ```
 ## zsh
 
